@@ -61,7 +61,7 @@ def evaluate(hparams, model, data):
 
 def run(file_pickle):
     data = pickle.load(file_pickle)
-    checkpoint_path = "/home/dsi/netaglazer/Projects/TCR_MHC_ERGO_tcr_hla_binding/TCR_MHC_new/tcr_mhc_binding/version_server/checkpoints/epoch=32.ckpt"
+    checkpoint_path = "checkpoint/epoch=32.ckpt"
     
     args =  {'dataset': 'final_mcpas_neg_mhc_2206', 'tcr_encoding_model': 'AE', 'cat_encoding':'embedding',
                  'use_alpha': True, 'use_vj': True, 'use_mhc': True, 'use_t_type': True, 'aa_embedding_dim':10,
