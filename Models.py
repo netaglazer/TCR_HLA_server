@@ -144,7 +144,7 @@ class AE_Encoder(nn.Module):
             ae_file = os.sep.join([ae_dir, 'tcra_ae_dim_' + str(self.encoding_dim) + '.pt'])
         elif self.tcr_type == 'beta':
             ae_file = os.sep.join([ae_dir, 'tcrb_ae_dim_' + str(self.encoding_dim) + '.pt'])
-        checkpoint = torch.load(ae_file, map_location='cuda:0')
+         checkpoint = torch.load(ae_file, map_location='cuda:0')
         # checkpoint = torch.load(ae_file)
         self.autoencoder.load_state_dict(checkpoint['model_state_dict'])
         if train_ae is False:

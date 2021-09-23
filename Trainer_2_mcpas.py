@@ -5,7 +5,10 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 import pytorch_lightning as pl
 from pytorch_lightning import Trainer
-from pytorch_lightning.logging import TensorBoardLogger
+
+# from pytorch_lightning.logging import TensorBoardLogger
+from pytorch_lightning.loggers import TensorBoardLogger
+
 from pytorch_lightning.callbacks import EarlyStopping
 from Loader_2 import SignedPairsDataset, DiabetesDataset, get_index_dicts #, SinglePeptideDatasetWeighted
 from Models import PaddingAutoencoder, AE_Encoder, LSTM_Encoder, ERGO
