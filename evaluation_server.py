@@ -20,7 +20,8 @@ from sklearn.metrics import accuracy_score
 
 def load_model(hparams, checkpoint_path):
     model = ERGOLightning(hparams)
-    checkpoint = torch.load(checkpoint_path, map_location='cuda:1')
+    # checkpoint = torch.load(checkpoint_path, map_location='cuda:1')
+    checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['state_dict'])
     return model
 
