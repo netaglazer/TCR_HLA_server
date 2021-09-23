@@ -53,7 +53,7 @@ def evaluate(hparams, model, data):
         dict_list.append(temp_dict)
 
     df = pd.DataFrame.from_dict(dict_list)
-    df = df[['tcrb','vb','jb','tcra','va','ja','t_cell_type', 'mhc', 'prediction']]
+    df = df[['tcrb', 'vb', 'jb', 'tcra', 'va', 'ja', 't_cell_type', 'mhc', 'prediction']]
     return df
 
 
