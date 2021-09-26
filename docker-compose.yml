@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  python:
+    build: .
+    restart: unless-stopped
+    labels:
+      - "traefik.backend=${podName}-python"
+      - "traefik.frontend.rule=Host:${hostRule}"
+      - "traefik.docker.network=${podName}_frontend"
+      - "traefik.port=5000"
+
+    networks:
+      - frontend
+
+networks:
+  frontend:
